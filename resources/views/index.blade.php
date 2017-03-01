@@ -30,6 +30,7 @@
       <tr>
         <th>ID</th>
         <th>Tweet</th>
+        <th>Edit</th>
         <th>Delete</th>
         <th>Detailed View</th>
       </tr>
@@ -37,6 +38,7 @@
     <tr>
       <td>{{$tweet->id}}</td>
       <td>{{$tweet->tweet}}</td>
+      <td><a href='/tweets/{{$tweet->id}}/edit/'>Edit</a></td>
       <td>
         <form action='/tweets/{{$tweet->id}}/delete/' method='post'>
           {{csrf_field()}}
