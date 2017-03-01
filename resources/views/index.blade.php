@@ -16,7 +16,7 @@
       @endif
     </div>
     <div class='container'>
-    <form action='/tweets/new/' method='post'>
+    <form action='/tweets/' method='post'>
       Create a new tweet:
       {{csrf_field()}}
       <textarea name='tweet' class='form-control'></textarea>

@@ -8,7 +8,7 @@ class tweet_controller extends Controller
 {
   public function add_tweet(Request $request)
   {
-    $tweet_input = $request->input('tweet');
+    $tweet = $request->input('tweet');
     $validation = \Validator::make($request->all(), [
       'tweet' => 'required|max:140'
     ]);
@@ -16,13 +16,10 @@ class tweet_controller extends Controller
     {
       return redirect('/')->withErrors($validation);
     }
-    $tweet = new Tweet;
-    $tweet->tweet = $tweet_input;
-    $tweet->save();
-    if ($results_insert==1){
-      $results_insert = 'successfully created tweet';
-    }
-    //return view('index', ['tweets'=>$results_select, 'message'=>$results_insert]);
+    $tweet_new = new Tweet;
+    $tweet_new->tweet = $tweet;
+    $tweet_new->save();
+
     return redirect('/')->with('success_status', 'Tweet was created successfully.');
   }
 

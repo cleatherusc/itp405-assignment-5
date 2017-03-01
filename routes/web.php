@@ -12,7 +12,7 @@
 */
 Route::get('/', 'index_controller');
 
-Route::post('/tweets/{id}/', 'tweet_controller@add_tweet');
+Route::post('/tweets/', 'tweet_controller@add_tweet');
 Route::get('/tweets/{id}/', 'tweet_controller@view');
 Route::get('/tweets/{id}/edit/', 'tweet_controller@edit_view');
 Route::post('/tweets/{id}/', 'tweet_controller@edit');
